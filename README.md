@@ -12,7 +12,7 @@ Replication Factor: 1
 <br/>Acks: all 
 <br/>Compression: Snappy
 <br/>File Size: 43K (1k records); File contains key,value pair
-<br/>Time taken: 350 ms
+<br/><b>Time taken: 350 ms</b>
 
 
 
