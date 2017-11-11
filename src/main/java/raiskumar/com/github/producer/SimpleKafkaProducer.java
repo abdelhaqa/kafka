@@ -13,7 +13,7 @@ import java.util.Properties;
 public class SimpleKafkaProducer {
     private final static String TOPIC = "test";
     private final static String BOOTSTRAP_SERVERS = "localhost:9092";
-    private String fileName = "/Applications/kafka_2.11-0.11.0.1/sampleFile.txt";
+    private String fileName = "recordFile.txt";
     private static KafkaProducer<String, String> producer;
 
 
@@ -51,7 +51,7 @@ public class SimpleKafkaProducer {
         }finally{
             producer.close();
             long t2 = System.currentTimeMillis();
-            System.out.println(" time taken ="+ (t2-t1));
+            System.out.println(" time taken ="+ (t2-t1) + " in ms");
             System.out.println(" Number or records processed ="+ index);
         }
     }
