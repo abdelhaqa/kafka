@@ -37,13 +37,16 @@ public class SimpleKafkaConsumer {
         consumer.subscribe(Collections.singletonList(TOPIC));
         final int giveUp = 100;
         int noRecordsCount = 0;
+        long t1 = System.currentTimeMillis();
         try {
             while (true) {
                 ConsumerRecords<String, String> records = consumer.poll(100);
 
-                System.out.println("No. of records="+ records.count());
+                //System.out.println("No. of records="+ records.count());
 
                 if (records.count()==0) {
+                    long t2 = System.currentTimeMillis();
+                    System.out.println(" time taken when number of records became 0="+ (t2-t1) + " in ms");
                     noRecordsCount++;
                     if (noRecordsCount > giveUp) break;
                     else continue;
@@ -63,6 +66,8 @@ public class SimpleKafkaConsumer {
                 consumer.commitSync();
             } finally {
                 consumer.close();
+                long t2 = System.currentTimeMillis();
+                System.out.println(" time taken ="+ (t2-t1) + " in ms");
             }
         }
 

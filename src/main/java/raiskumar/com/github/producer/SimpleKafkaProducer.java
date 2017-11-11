@@ -51,7 +51,7 @@ public class SimpleKafkaProducer {
         }finally{
             producer.close();
             long t2 = System.currentTimeMillis();
-            System.out.println(" time taken ="+ (t2-t1) + " in ms");
+            System.out.println(" Total time taken ="+ (t2-t1) + " in ms");
             System.out.println(" Number or records processed ="+ index);
         }
     }
